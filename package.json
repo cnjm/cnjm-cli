@@ -1,0 +1,39 @@
+{
+  "name": "cnjm-cli",
+  "version": "1.0.0",
+  "description": "cli",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cnjm-cli": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnjm/cnjm-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "nest",
+    "server",
+    "h5",
+    "vue",
+    "vite"
+  ],
+  "author": "cnjm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnjm/cnjm-cli/issues"
+  },
+  "homepage": "https://github.com/cnjm/cnjm-cli#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "chalk": "^5.0.1",
+    "commander": "^9.1.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^8.2.1",
+    "ora": "^6.1.0"
+  }
+}
