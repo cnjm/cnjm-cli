@@ -8,7 +8,7 @@ const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 // const chalk = require('chalk');
 
-console.log(chalk.green("CNJM CLI"));
+console.log(chalk.green("Welcome to use CNJM CLI"));
 
 program.version(packageJson.version).usage('<command> [project name]');
 

@@ -3,18 +3,38 @@
 import { Command } from 'commander';
 const program = new Command();
 import axios from 'axios';
-import path from 'path';
-import inquirer from 'inquirer';
+import ora from 'ora';
+import chalk from 'chalk';
+import { github } from '../config.js';
+
 
 program.usage('<project-name>').parse(process.argv);
 
 // 获取项目列表
-const getRepoList = async () => {
-    const { data } = await axios.get('https://gitee.com/organizations/cnjm-cli-tempalte/projects');
-    console.log(data)
+export const getRepoList = async () => {
+    const { data } = await axios.get(github.repos);
     const resultArr = data.map(item => {
-        return item.name;
+        return {
+            value: item.name,
+            name: `${item.name}(${item.description})`,
+            description: item.description
+        }
     });
     return resultArr;
 };
-console.log(getRepoList())
+const spinner = ora();
+spinner.start();
+console.log(chalk.gray('begin:Get Repo List'));
+const list = await getRepoList();
+let listStr = `[`;
+list.forEach(element => {
+    listStr += `
+    {
+        value:${element.value},
+        description:${element.description},
+    },`
+});
+listStr += `
+]`;
+spinner.succeed(chalk.green('success:Get Repo List'));
+console.log(chalk.green(listStr));
