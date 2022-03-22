@@ -97,8 +97,9 @@ inquirer.prompt([{
     await rewritePackage(answers);
     spinner.succeed(chalk.green(`success:${answers.cliTemplate}`))
     console.log(chalk.green(`
-    App project at dev:
+    Run project at dev:
     - 1: cd ${answers.projectName}
-    - 2: npm/yarn run start:dev
+    - 2: npm/yarn install
+    - 3: npm/yarn run start:dev
     `));
 })
