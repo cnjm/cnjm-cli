@@ -1,14 +1,14 @@
 {
   "name": "cnjm-cli",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "description": "cli",
-  "main": "index.js",
+  "main": "./bin/cli.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "cnjm-cli": "./bin/index.js"
+    "cnjm-cli": "./bin/cli.js"
   },
   "repository": {
     "type": "git",

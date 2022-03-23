@@ -1,16 +1,15 @@
 #! /usr/bin/env node
 
-import fs from 'fs';
 import chalk from 'chalk';
 import { Command } from 'commander';
+
 const program = new Command();
-const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 
 // const chalk = require('chalk');
 
 console.log(chalk.green("Welcome to use CNJM CLI"));
 
-program.version(packageJson.version).usage('<command> [project name]');
+program.version('1.0.8').usage('<command> [project name]');
 
 program.command('create', 'create a defau project')
     .option('-a, --agenda', 'print human-readable agenda');
